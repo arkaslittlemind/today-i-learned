@@ -80,7 +80,7 @@ console.log(parseInt("23.5333cc"));
 
 
 function calFactAge(year) {
-    const currentYear = 2023;
+    const currentYear = new Date().getFullYear();
     const age = currentYear - year;
     return age;
 }
