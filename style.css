@@ -11,6 +11,11 @@
     padding: 48px 64px;
   }
   
+  .hidden {
+    display: none !important;
+  }
+
+  
   /* MAIN LAYOUT */
   .container {
     max-width: 1500px;
