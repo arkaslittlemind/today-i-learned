@@ -29,3 +29,13 @@ p {
     margin-bottom: 40px;
     font-family: ;
 }
+
+
+span {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
