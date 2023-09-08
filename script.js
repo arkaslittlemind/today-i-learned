@@ -59,7 +59,7 @@ btn.addEventListener('click', function() {
     }
 });
 
-
+/*
 let votesInteresting = 23;
 let votesMindblowing = 5;
 
@@ -77,7 +77,7 @@ const isCorrect = votesFalse < totalUpvotes;
 console.log("Is correct:", isCorrect);
 
 console.log(parseInt("23.5333cc"));
-
+*/
 
 function calFactAge(year) {
     const currentYear = new Date().getFullYear();
@@ -87,3 +87,13 @@ function calFactAge(year) {
 
 const age1 = calFactAge(2015);
 console.log(age1);
+
+
+let votesInteresting = 20;
+let votesMindblowing = 20;
+
+if(votesInteresting === votesMindblowing) {
+    alert("This fact is equally interesting and mindblowing");
+} else {
+    console.log("Both are equal");
+}
