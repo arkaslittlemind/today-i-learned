@@ -44,12 +44,43 @@ const initialFacts = [
   ];
 
 
+// Selecting DOM elements
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
+const factsList = document.querySelector(".facts-list");
+
+// Create DOM elements: Render facts in list
+factsList.innerHTML = "";
+createFactsList(initialFacts);
+
+
+function createFactsList(dataArray) {
+    // factsList.insertAdjacentHTML("afterbegin", "<li>Arka</li>");
+  
+    const htmlArr = dataArray.map(
+      (fact) => `<li class="fact">
+      <p>
+      ${fact.text}
+        <a
+          class="source"
+          href="${fact.source}"
+          target="_blank"
+        >(Source)</a>
+      </p>
+      <span class="tag" style="background-color: ${
+        CATEGORIES.find((cat) => cat.name === fact.category).color
+      }">${fact.category}</span>
+    </li>`
+    );
+    const html = htmlArr.join("");
+    factsList.insertAdjacentHTML("afterbegin", html);
+  }
 
 
 // Toggle the form visibility
 btn.addEventListener('click', function() {
+    
+
     if (form.classList.contains("hidden")) {
         form.classList.remove("hidden");
         btn.textContent = "Close";
