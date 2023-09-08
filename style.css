@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #292524;
+    color: #fafaf9;
+    font-family: 'Sono', sans-serif;
+    padding: 48px 64px;
+}
+
+
+/* MAIN LAYOUT */
+
+h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    font-family: ;
+}
