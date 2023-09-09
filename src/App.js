@@ -103,8 +103,13 @@ function NewFactForm() {
   const [category, setCategory] = useState("");
   const textLength = text.length;
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(text, source, category);
+  }
+
   return (
-    <form className="fact-form" action="">
+    <form className="fact-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Share a fact with the world..."
