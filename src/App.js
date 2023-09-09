@@ -2,6 +2,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 
 import { useState } from "react";
+import supabase from "./supabase";
+
 import "./style.css";
 
 const initialFacts = [
