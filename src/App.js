@@ -101,6 +101,7 @@ function NewFactForm() {
   const [text, setText] = useState("");
   const [source, setSource] = useState("");
   const [category, setCategory] = useState("");
+  const textLength = text.length;
 
   return (
     <form className="fact-form" action="">
@@ -110,7 +111,7 @@ function NewFactForm() {
         value={text}
         onChange={(event) => setText(event.target.value)}
       />
-      <span>200</span>
+      <span>{200 - textLength}</span>
       <input type="text" placeholder="Trustworthy source..." 
       value={source}
       onChange={(event1) => setSource(event1.target.value)}/>
