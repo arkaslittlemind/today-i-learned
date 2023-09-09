@@ -102,7 +102,23 @@ function FactList() {
     <section>
       <ul className="facts-list">
         {facts.map((fact) => (
-          <li key={fact.id}className="fact">
+          <Fact key={fact.id} fact={fact}/>
+        ))}
+      </ul>
+      Facts List
+    </section>
+  );
+}
+
+
+
+
+function Fact({ fact }) {
+  
+  
+  
+  return(
+    <li className="fact">
             <p>
               {fact.text}
               <a
@@ -121,17 +137,14 @@ function FactList() {
             >
              {fact.category}
             </span>
-            <div class="vote-buttons">
+            <div className="vote-buttons">
               <button>👍 {fact.votesInteresting}</button>
               <button>🤯 {fact.votesMindblowing}</button>
               <button>⛔️ {fact.votesFalse}</button>
             </div>
           </li>
-        ))}
-      </ul>
-      Facts List
-    </section>
-  );
-}
+  )
+  
+};
 
 export default App;
