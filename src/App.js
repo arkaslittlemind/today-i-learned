@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-target-blank */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import supabase from "./supabase";
 
 import "./style.css";
@@ -56,15 +56,25 @@ const initialFacts = [
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [facts, setFacts]= useState(initialFacts);
-  
+  const [facts, setFacts] = useState(initialFacts);
+
+  useEffect(function () {
+    async function getFacts() {
+      const { data: facts, error } = await supabase.from("facts").select("id");
+      console.log(facts);
+    }
+    getFacts();
+  }, []);
+
   return (
     <>
       <Header showForm={showForm} setShowForm={setShowForm} />
-      {showForm ? <NewFactForm setFacts={setFacts}  setShowForm={setShowForm}/> : null}
+      {showForm ? (
+        <NewFactForm setFacts={setFacts} setShowForm={setShowForm} />
+      ) : null}
       <main className="main">
         <CategoryFilter />
-        <FactList facts={facts}/>
+        <FactList facts={facts} />
       </main>
     </>
   );
