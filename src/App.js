@@ -56,12 +56,12 @@ const initialFacts = [
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [facts, setFacts] = useState(initialFacts);
+  const [facts, setFacts] = useState([]);
 
   useEffect(function () {
     async function getFacts() {
       const { data: facts, error } = await supabase.from("facts").select("id");
-      console.log(facts);
+      setFacts(facts);
     }
     getFacts();
   }, []);
@@ -82,6 +82,7 @@ function App() {
 
 function Header({ showForm, setShowForm }) {
   const appTitle = "Today I Learned";
+  
   return (
     <header className="header">
       <div className="logo">
