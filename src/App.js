@@ -39,7 +39,7 @@ const initialFacts = [
 ];
 
 
-function Counter() {
+/*function Counter() {
 
   const [count, setCount] = useState(0);
   console.log("rendering......")
@@ -51,9 +51,15 @@ function Counter() {
     </div>
   );
 }
+*/
 
 
 function App() {
+
+  //1.define state variable
+  const [showForm, setShowForm] = useState(false);
+
+
   const appTitle = "Today I Learned";
 
   return (
@@ -71,16 +77,15 @@ function App() {
         </div>
 
         <button
-          className="btn btn-large 
-        btn-open"
-        >
+        className="btn btn-large btn-open"
+        //3.Update state variable
+        onClick={()=>setShowForm((show) => !show)}>
           Share a fact
         </button>
       </header>
 
-
-      <Counter />
-      <NewFactForm />
+      {/* 2.Use state variables */}
+      {showForm ? <NewFactForm /> : null}
 
       <main className="main">
         <CategoryFilter />
