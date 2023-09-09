@@ -42,7 +42,7 @@ const initialFacts = [
 function Counter() {
 
   const [count, setCount] = useState(0);
-
+  console.log("rendering......")
   return(
     <div>
       <span style = {{fontSize:'40px'}}>{count}</span>
