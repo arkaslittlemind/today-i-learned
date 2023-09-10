@@ -63,9 +63,10 @@ function App() {
   useEffect(function () {
     async function getFacts() {
       setIsLoading(true);
-      // eslint-disable-next-line no-unused-vars
-      const { data: facts, error } = await supabase.from("facts").select("*").order("text", {ascending: true});
-      setFacts(facts);
+      const { data: facts, error } = await supabase.from("facts").select("*").order("votesInteresting", {ascending: false}).limit(1000);
+      
+      if(!error) setFacts(facts);
+      else alert("There was a problem getting the data")
       setIsLoading(false);
     }
     getFacts();
@@ -227,7 +228,7 @@ function FactList({ facts }) {
         ))}
       </ul>
       <p>There are {facts.length} facts in the database</p>
-      Facts List
+      Add your own!
     </section>
   );
 }
