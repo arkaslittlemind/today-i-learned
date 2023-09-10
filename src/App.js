@@ -57,11 +57,15 @@ const initialFacts = [
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [facts, setFacts] = useState([]);
+  const [loading, setIsLoading] = useState(true);
 
   useEffect(function () {
     async function getFacts() {
-      const { data: facts, error } = await supabase.from("facts").select("id");
+      setIsLoading(true);
+      // eslint-disable-next-line no-unused-vars
+      const { data: facts, error } = await supabase.from("facts").select("*");
       setFacts(facts);
+      setIsLoading(false);
     }
     getFacts();
   }, []);
@@ -72,12 +76,20 @@ function App() {
       {showForm ? (
         <NewFactForm setFacts={setFacts} setShowForm={setShowForm} />
       ) : null}
+
       <main className="main">
         <CategoryFilter />
-        <FactList facts={facts} />
+
+        {loading ? <Loader /> : <FactList facts={facts} />}
       </main>
     </>
   );
+}
+
+function Loader() {
+  return(
+    <p className="message">Loading...</p>
+  ); 
 }
 
 function Header({ showForm, setShowForm }) {
