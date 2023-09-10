@@ -6,6 +6,7 @@ import supabase from "./supabase";
 
 import "./style.css";
 
+// eslint-disable-next-line no-unused-vars
 const initialFacts = [
   {
     id: 1,
@@ -63,7 +64,7 @@ function App() {
     async function getFacts() {
       setIsLoading(true);
       // eslint-disable-next-line no-unused-vars
-      const { data: facts, error } = await supabase.from("facts").select("*");
+      const { data: facts, error } = await supabase.from("facts").select("*").order("text", {ascending: true});
       setFacts(facts);
       setIsLoading(false);
     }
