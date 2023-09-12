@@ -1,3 +1,9 @@
+A clean and concise full stack web application made with Reactjs being the frontend language and Supabase ie; the awesome open source Firebase alternative to store data in the backend.
+
+The web application enables users to jot down facts based on some particular categories and also a valid url source to authenticate the fact. To add to that the user can vote on the fact with three voting categories added for now. All the data is being stored in a table created on Supabase.
+
+<img src="https://drive.google.com/file/d/1_SWd76IQng6WAW9c3372ncgCfxnygrVr/view?usp=sharing" alt="Landing Page"/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
