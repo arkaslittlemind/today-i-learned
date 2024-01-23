@@ -256,6 +256,13 @@ function FactList({ facts, setFacts }) {
   );
 }
 
+/**
+ * Represents a Fact component.
+ * @param {Object} props - The component props.
+ * @param {Object} props.fact - The fact object.
+ * @param {Function} props.setFacts - The function to update the facts.
+ * @returns {JSX.Element} The Fact component.
+ */
 function Fact({ fact, setFacts }) {
 
   const[isUpdating, setIsUpdating] = useState(false);
